@@ -1,4 +1,8 @@
 Flask==3.0.3
 protobuf==4.25.4
 google-generativeai==0.7.2
+<<<<<<< HEAD
 Werkzeug==3.1.6  # 3.1.7 forbid access between containers using servicename:port.
+=======
+Werkzeug==3.1.6
+>>>>>>> update to production settings

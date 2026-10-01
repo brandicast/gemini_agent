@@ -12,14 +12,14 @@ ADD . /code
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Automatically find and install all plugin-specific dependencies
-RUN find src/tools -name "requirements.txt" -exec pip install --no-cache-dir -r {} +
+RUN find src/tools -name "requirements.txt" -exec pip install --no-cache-dir -r {} \;
 
 RUN mkdir -p history 
 
 ENV API_KEY={$YOU_API_KEY}
 ENV CWA_API_KEY={$CWA_API_KEY}
 
-VOLUME ['./history']
+VOLUME '/code/history'
 
 # Container 啟動指令：Container 啟動後通過 python 運行 server.py
 CMD ["python", "src/server.py"]

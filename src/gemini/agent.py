@@ -147,7 +147,7 @@ def getModel ():
         # When using tools with the Python SDK, if the list is empty,
         # it's best to omit the tools parameter entirely rather than passing [].
         kwargs = {
-            'model_name': 'gemini-2.5-flash',
+            'model_name': os.getenv('GEMINI_MODEL', 'gemini-3.5-flash-lite'),
             'system_instruction': instruction,
             'safety_settings': {
                 genai.types.HarmCategory.HARM_CATEGORY_HATE_SPEECH: genai.types.HarmBlockThreshold.BLOCK_NONE,
